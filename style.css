@@ -1,6 +1,6 @@
 :root {
   --primary--color--: #e6e6ff;
-  --secondary--color--: #e6e6ff;
+  /* --secondary--color--: #e6e6ff; */
   --white--color: #fff;
 }
 
@@ -71,7 +71,7 @@ body {
   height: 50%;
   border-radius: 2rem;
   border: none;
-  background-color: var(--secondary--color--);
+  background-color: var(--primary--color--);
   font-size: 1.6rem;
   padding-left: 1rem;
   appearance: none;
@@ -116,25 +116,39 @@ border-radius: 0 0 2rem 2rem;
 
 .user__info{
   height: 100%;
-  /* width: 40%; */
-  margin-left: 10rem;
   display: flex;
   border: 1px solid black;
   justify-content: space-between;
   position:relative;
 }
 
-.user__info img {
+.user__info span {
+position: relative;
+width: 18rem;
+height: 18rem;
+}
+
+.user__info span img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0%;
+  top: -50%;
+  border:5px solid var(--white--color);
+  border-radius: 50%;
+}
+
+/* .user__info img {
    position:absolute; 
    top: 0%;
    left: 0%;
-   /* height: 50rem;
-   width: 50rem; */
-}
+    height: 50rem;
+   width: 50rem; 
+} */
 
 
 .user__edit {
-width: 13%;
+min-width: 15%;
 display: flex;
 justify-content: space-between;
 background-color: var(--primary--color--);
@@ -144,7 +158,11 @@ align-items: center;
 padding: 1rem 2rem;
 border-radius: 1rem;
 align-self: flex-end;
+cursor: pointer;
+}
 
+.user__edit:hover{
+  background-color: #ccccff;
 }
 
 .user__edit img {
