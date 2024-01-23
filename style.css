@@ -1,5 +1,5 @@
 :root {
-  --primary--color--: #f6f4f3;
+  --primary--color--: #e6e6ff;
   --secondary--color--: #e6e6ff;
   --white--color: #fff;
 }
@@ -107,6 +107,7 @@ border-radius: 0 0 2rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
 }
 
 .user__profile img {
@@ -114,11 +115,39 @@ border-radius: 0 0 2rem 2rem;
 }
 
 .user__info{
-  
+  height: 100%;
+  /* width: 40%; */
+  margin-left: 10rem;
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  position:relative;
+}
+
+.user__info img {
+   position:absolute; 
+   top: 0%;
+   left: 0%;
+   /* height: 50rem;
+   width: 50rem; */
 }
 
 
-.user__buttons {
-border: 1px solid black;
-width: 30%;
+.user__edit {
+width: 13%;
+display: flex;
+justify-content: space-between;
+background-color: var(--primary--color--);
+font-size: 1.6rem;
+font-weight: bold;
+align-items: center;
+padding: 1rem 2rem;
+border-radius: 1rem;
+align-self: flex-end;
+
 }
+
+.user__edit img {
+  height: 100%;
+}
+
