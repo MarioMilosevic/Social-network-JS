@@ -1,6 +1,7 @@
 :root {
   --primary--color--: #f6f4f3;
   --secondary--color--: #e6e6ff;
+  --white--color: #fff;
 }
 
 * {
@@ -8,8 +9,69 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+}
 
 body {
   background-color: var(--primary--color--);
+  display: flex;
 }
 
+#app {
+  width: 100%;
+}
+
+.main__navigation {
+  background-color: var(--white--color);
+  height: 10%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+}
+
+.main__navigation button img {
+  height: 100%;
+  border: none;
+  appearance: none;
+  outline: transparent solid 2px;
+}
+
+.main__navigation button {
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 1rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.main__navigation button:hover {
+  filter: brightness(0.94);
+  transform: scale(1.1);
+}
+
+.logo__img {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.logo__img img {
+  height: 100%;
+cursor: pointer;
+}
+
+.logo__img input {
+  margin-left: 1rem;
+  height: 50%;
+  border-radius: 2rem;
+  border: none;
+  background-color: var(--secondary--color--);
+  font-size: 1.6rem;
+  padding-left: 1rem;
+  appearance: none;
+  outline: transparent 2px solid;
+}
