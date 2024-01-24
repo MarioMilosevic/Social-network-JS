@@ -15,6 +15,9 @@ export const userAdress = userText.querySelector("h3");
 export const friends = document.querySelector(".friends");
 export const friendList = document.querySelector(".friend__list");
 const loadingSpinner = document.querySelector('.loader')
+const friendsInfo = document.querySelector('.friends__info')
+export const friendsText = friendsInfo.querySelector('h2')
+export const totalFriendsNumber = friendsInfo.querySelector('p')
 
 // Class instances
 const globalState = new GlobalState()
