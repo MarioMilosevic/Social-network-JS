@@ -95,7 +95,7 @@ main {
 
 .user__cover__photo {
   /* border: 1px solid black; */
-  width: 70%;
+  width: 80%;
   height: 80%;
   background-color: var(--primary--color--);
   border-radius: 0 0 2rem 2rem;
@@ -182,15 +182,16 @@ main {
 
 .friends__section {
   display: flex;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
 .friends {
   width: 40%;
   margin: 0 auto;
-  border: 1px solid black;
-  padding: 1rem;
+  border-radius: 1rem;
+  padding: 1.6rem;
+  background-color: var(--white--color);
 }
 
 .friends h2 {
@@ -203,5 +204,23 @@ main {
 
 .posts {
   width: 50%;
-  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: var(--white--color);
+}
+
+.friend__list{
+list-style: none;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+border: 1px solid black;
+gap: 1rem;
+}
+
+.friend__list li {
+width: 100%;
+}
+
+.friend__list li img {
+  width: 100%;
+  height: 80%;
 }
