@@ -209,6 +209,7 @@ main {
 .posts {
   width: 50%;
   border-radius: 1rem;
+  height: 50rem;
   background-color: var(--white--color);
 }
 
