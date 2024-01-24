@@ -1,14 +1,24 @@
 "use strict";
 
 export class User {
+  user;
   constructor(user) {
-    this.adress = user.adress;
-    this.friends = [...user.friends];
-    this.id = user.id;
-    this.lastName = user.lastName;
-    this.name = user.name;
-    this.posts = [...user.posts];
+    this.user = user;
   }
 
-  
+  getAdress(){
+    return this.adress
+  }
+
+  getFullName() {
+    return `${this.name} ${this.lastName}`;
+  }
+
+  getFriends() {
+    return this.friends;
+  }
+
+  getPosts() {
+    return this.user.posts;
+  }
 }
