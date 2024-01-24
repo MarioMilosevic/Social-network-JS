@@ -80,6 +80,7 @@ body {
 /*  -------------------- MAIN --------------------*/
 main {
   height: 75%;
+  margin-bottom: 2rem;
 }
 .user {
   margin: 0 auto;
@@ -185,16 +186,15 @@ main {
   margin: 0 auto;
 }
 
-
 .friends {
   width: 40%;
-  margin: 1.6rem auto;
+  margin: 0 auto;
   border: 1px solid black;
+  padding: 1rem;
 }
 
 .friends h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
 }
 
 .friends p {
@@ -203,4 +203,5 @@ main {
 
 .posts {
   width: 50%;
+  border: 1px solid black;
 }
