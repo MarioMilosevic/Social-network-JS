@@ -2,20 +2,31 @@
 
 export class User {
   user;
+  name;
+  lastName;
+  friends;
   constructor(user) {
     this.user = user;
+    this.name = user.name;
+    this.lastName = user.lastName
+    this.adress = user.adress.street
+    this.friends = user.friends
   }
 
-  getAdress(){
-    return this.adress
+  getAdress() {
+    return this.adress;
   }
 
   getFullName() {
     return `${this.name} ${this.lastName}`;
   }
 
-  getFriends() {
-    return this.friends;
+  getFriendsArr(){
+    return this.friends
+  }
+
+  getFriendsNumber() {
+    return this.friends.length;
   }
 
   getPosts() {

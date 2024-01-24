@@ -5,6 +5,8 @@ import { showFriends } from "./class/HelperFunctions/showFriends.js";
 import { displayUserInfo } from "./class/HelperFunctions/displayUserInfo.js";
 import { GlobalState } from "./class/GlobalState.js";
 
+// Query selectors
+
 const app = document.querySelector('#app')
 export const userText = document.querySelector(".user__text");
 export const userName = userText.querySelector("h1");
@@ -13,8 +15,11 @@ export const userAdress = userText.querySelector("h3");
 export const friends = document.querySelector(".friends");
 export const friendList = document.querySelector(".friend__list");
 const loadingSpinner = document.querySelector('.loader')
+
+// Class instances
 const globalState = new GlobalState()
-const mainUser = new User(user);
+export const mainUser = new User(user);
+console.log(mainUser);
 
 setTimeout(() => {
     loadingSpinner.style.display = 'none'
@@ -22,5 +27,5 @@ setTimeout(() => {
     globalState.setToLoaded()
     displayUserInfo(mainUser)
     showFriends(mainUser);
-}, 1000);
+}, 1500);
 

@@ -2,7 +2,8 @@
 import { userName,userAdress,userFriendsNumber } from "../../main"
 
 export const displayUserInfo = (user) => {
-userName.textContent = `${user.name} ${user.lastName}`
-userFriendsNumber.textContent = `${user.friends.length} friends`
-userAdress.textContent =`${user.adress.street}`
+userName.textContent = `${user.getFullName()}`
+console.log(userName.textContent = `${user.getFullName()}`)
+userFriendsNumber.textContent = `${user.getFriendsNumber()} friends`
+userAdress.textContent =`${user.getAdress()}`
 }

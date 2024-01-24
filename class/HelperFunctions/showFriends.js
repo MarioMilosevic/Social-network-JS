@@ -2,7 +2,7 @@
 import { friendList } from "../../main";
 
 export const showFriends = (user) => {
-  const friends = [...user.friends];
+  const friends = [...user.getFriendsArr()];
   friends.forEach((f) => {
     const friend = document.createElement("li");
     friend.classList.add("friend__list__item");
