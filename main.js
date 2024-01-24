@@ -14,5 +14,9 @@ export const friendList = document.querySelector(".friend__list");
 
 const mainUser = new User(user);
 
-displayUserInfo(mainUser)
-showFriends(mainUser);
+setTimeout(() => {
+    displayUserInfo(mainUser)
+    showFriends(mainUser);
+    
+}, 1000);
+

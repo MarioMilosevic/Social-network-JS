@@ -9,4 +9,6 @@ export class User {
     this.name = user.name;
     this.posts = [...user.posts];
   }
+
+  
 }
