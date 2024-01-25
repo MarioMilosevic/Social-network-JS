@@ -3,6 +3,7 @@ import { user } from "./data.js";
 import { User } from "./class/User.js";
 import { showFriends } from "./HelperFunctions/showFriends.js";
 import { displayUserInfo } from "./HelperFunctions/displayUserInfo.js";
+import { displayPost } from "./HelperFunctions/displayPost.js";
 import { GlobalState } from "./class/GlobalState.js";
 
 // Query selectors
@@ -18,6 +19,8 @@ const loadingSpinner = document.querySelector('.loader')
 const friendsInfo = document.querySelector('.friends__info')
 export const friendsText = friendsInfo.querySelector('h2')
 export const totalFriendsNumber = friendsInfo.querySelector('p')
+export const posts = document.querySelector('.posts')
+
 
 // Class instances
 const globalState = new GlobalState()
@@ -30,5 +33,6 @@ setTimeout(() => {
     globalState.setToLoaded()
     displayUserInfo(mainUser)
     showFriends(mainUser);
+    displayPost(mainUser)
 }, 1500);
 
