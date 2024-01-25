@@ -229,6 +229,7 @@ main {
 
 .friends p {
   font-size: 1.6rem;
+  margin-top: 0.5rem;
 }
 
 .posts {
@@ -337,6 +338,11 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.liked__by {
+  font-size: 1.6rem;
+  width: 50rem;
 }
 
 .likes__comments__number svg {

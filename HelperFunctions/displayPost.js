@@ -24,6 +24,7 @@ export const displayPost = (user) => {
 </svg>
 <span>${post.likes.length}</span>
 </div>
+<p class="liked__by">${user.getWhoLiked().first.name} ${user.getWhoLiked().first.lastName}, ${user.getWhoLiked().second.name} ${user.getWhoLiked().second.lastName} and ${user.getWhoLiked().others.length} others liked this.</p>
 <div class="comment__container">
 <span class="comment__number">${post.comments.length}</span>
 <p class="comments__button">Comments</p>
@@ -54,7 +55,7 @@ export const displayPost = (user) => {
 </div>
 
 <div class="comment__info">
-<img src="${user.img}">
+<img src="${user.getImg()}">
 <div class="comment">
 <h2>${user.getFullName()}</h2>
 <p>Ovo je probni komentar</p>
@@ -63,5 +64,5 @@ export const displayPost = (user) => {
 </div>`;
     posts.append(li);
   });
-//   console.log(user);
+  console.log(user.getWhoLiked());
 };

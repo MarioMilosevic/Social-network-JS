@@ -43,10 +43,26 @@ export class User {
 
   getWhoLiked() {
     const posts = this.user.posts;
-    return posts
-    // const [first, second, ...others] = posts.likes;
-    // return {first, second, others}
+    let [first, second, others] = posts;
+    const likedObjects = [first, second, others];
+    likedObjects.forEach((obj) => {
+      const person = obj.likes;
+      const [person1, person2, others2] = person;
+      first = person1;
+      second = person2;
+      others = others2;
+    });
+    return {
+      first,
+      second,
+      others,
+      likedObjects,
+    };
   }
+
+  // displayWhoLiked(){
+  //   const  this.getWhoLiked()
+  // }
 
   getPostDate() {
     return this.user.postDate;
