@@ -9,9 +9,11 @@ const userPosts = user.getPosts()
 const li = document.createElement('li')
 li.innerHTML = `<div class="post">
 <div class="post__info">
-<img src="${user.img}">
+<img src=${user.getImg()}>
+<div class="user__post__info">
 <h2>${user.getFullName()}</h2>
 <p class="time__of__post">8 days ago</p>
+</div>
 </div>
 <div class="likes__comments__number">
 <button class="like__number">Like</button>
@@ -43,6 +45,7 @@ li.innerHTML = `<div class="post">
 </div>
 </div>
 </div>`
-
+console.log(user);
+console.log(user.getImg());
 posts.appendChild(li)
 }

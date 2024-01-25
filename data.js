@@ -4,6 +4,7 @@ export const user = {
   id: crypto.randomUUID(),
   name: "Nemanja",
   lastName: "Malesija",
+  img: "img/profile5.png",
   adress: {
     country: "Montenegro",
     city: "Podgorica",

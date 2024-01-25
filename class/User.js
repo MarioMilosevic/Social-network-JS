@@ -5,12 +5,14 @@ export class User {
   name;
   lastName;
   friends;
+  img
   constructor(user) {
     this.user = user;
     this.name = user.name;
     this.lastName = user.lastName
     this.adress = user.adress.street
     this.friends = user.friends
+    this.img = user.img
   }
 
   getAdress() {
@@ -31,5 +33,9 @@ export class User {
 
   getPosts() {
     return this.user.posts;
+  }
+
+  getImg(){
+    return this.img
   }
 }

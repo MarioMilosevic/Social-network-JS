@@ -274,3 +274,46 @@ main {
 .friend__list__item p {
   margin-bottom: 1rem;
 }
+
+
+/* --------------------- POSTS ---------------------*/
+
+.posts{
+  padding: 1rem;
+  background-color: var(--primary--color--);
+  list-style: none;
+}
+
+.post {
+  width: 100%;
+  border: 1px solid black;
+  margin-bottom: 20rem;
+  background-color: var(--white--color);
+  padding: 1rem;
+}
+
+.post__info {
+  /* border: 1px solid black; */
+  display: flex;
+  width: 50%;
+}
+
+.user__post__info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.user__post__info h2 {
+  font-size: 1.8rem;
+}
+
+.user__post__info p {
+  font-size: 1.2rem;
+}
+
+.post__info img {
+  width: 5rem;
+  height: 5rem;
+}
