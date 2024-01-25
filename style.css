@@ -275,13 +275,18 @@ main {
   margin-bottom: 1rem;
 }
 
-
 /* --------------------- POSTS ---------------------*/
 
-.posts{
+.posts {
   padding: 1rem;
   background-color: var(--primary--color--);
   list-style: none;
+}
+
+.posts li {
+  background-color: var(--white--color);
+  border-radius: 1.6rem;
+  padding: 0.5rem;
 }
 
 .post {
@@ -289,7 +294,6 @@ main {
   height: 15rem;
   /* border: 1px solid black; */
   border-radius: 1.6rem;
-  margin-bottom: 20rem;
   background-color: var(--white--color);
   padding: 1rem;
   display: flex;
@@ -303,7 +307,7 @@ main {
   width: 50%;
 }
 
-.user__post__info{
+.user__post__info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -323,14 +327,12 @@ main {
   height: 5rem;
 }
 
-.post__text{
+.post__text {
   /* border: 1px solid black; */
   font-size: 1.6rem;
 }
 
-
 .likes__comments__number {
-  /* margin-top: 2rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -342,7 +344,7 @@ main {
   cursor: pointer;
 }
 
-.like__button__container{
+.like__button__container {
   width: 5rem;
   display: flex;
   justify-content: space-between;
@@ -350,7 +352,7 @@ main {
   font-size: 1.6rem;
 }
 
-.comment__container{
+.comment__container {
   display: flex;
   width: 10rem;
   justify-content: space-between;
@@ -358,3 +360,101 @@ main {
   font-size: 1.6rem;
 }
 
+.post__buttons {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.like__button__div,
+.comment__button__div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white--color);
+  cursor: pointer;
+}
+
+.like__button__div svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.like__button__div p {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.comment__button__div svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.comment__button__div p {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.comment__section {
+  /* border: 1px solid black; */
+}
+
+.comment__section img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.comment__section__addComment {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  height: 40%;
+  padding: 0 1rem;
+}
+
+.comment__section__addComment input {
+  width: 93%;
+  height: 75%;
+  padding:1rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.comment__info {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  /* height: 10rem; */
+}
+
+.comment {
+  /* border: 1px solid black; */
+  width: 93%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--white--color);
+  border-radius: 1.6rem;
+}
+
+.comment h2 {
+  font-size: 1.6rem;
+}
+
+.comment p {
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.hidden {
+  /* display: none; */
+}
