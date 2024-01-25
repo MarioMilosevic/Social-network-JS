@@ -1,8 +1,8 @@
 "use strict";
 import { user } from "./data.js";
 import { User } from "./class/User.js";
-import { showFriends } from "./class/HelperFunctions/showFriends.js";
-import { displayUserInfo } from "./class/HelperFunctions/displayUserInfo.js";
+import { showFriends } from "./HelperFunctions/showFriends.js";
+import { displayUserInfo } from "./HelperFunctions/displayUserInfo.js";
 import { GlobalState } from "./class/GlobalState.js";
 
 // Query selectors

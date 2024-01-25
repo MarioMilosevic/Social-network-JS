@@ -1,6 +1,5 @@
 "use strict";
-import { friendList,friendsText, totalFriendsNumber } from "../../main";
-
+import {friendList, friendsText, totalFriendsNumber } from '/main'
 export const showFriends = (user) => {
   friendsText.textContent =  `Friends`
   totalFriendsNumber.textContent = `${user.getFriendsNumber()} friends`
