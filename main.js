@@ -25,7 +25,6 @@ export const posts = document.querySelector('.posts')
 // Class instances
 const globalState = new GlobalState()
 export const mainUser = new User(user);
-console.log(mainUser);
 
 setTimeout(() => {
     loadingSpinner.style.display = 'none'
@@ -34,5 +33,7 @@ setTimeout(() => {
     displayUserInfo(mainUser)
     showFriends(mainUser);
     displayPost(mainUser)
+    console.log(mainUser);
+    console.log(mainUser.getWhoLiked())
 }, 1500);
 

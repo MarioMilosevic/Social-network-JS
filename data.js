@@ -58,6 +58,7 @@ export const user = {
     {
       id: crypto.randomUUID(),
       postText: "Danas se osjecam kao Knez mihajlova",
+      postDate: "2 days ago",
       likes: [
         {
           name: "Gordana",
@@ -89,6 +90,7 @@ export const user = {
     {
       id: crypto.randomUUID(),
       postText: "Iskasljao sam danas jedan zeleni klobuk",
+      postDate: "7 days ago",
       likes: [
         {
           name: "Hoklberi",
@@ -100,6 +102,7 @@ export const user = {
     {
       id: crypto.randomUUID(),
       postText: "Ako umremo, umrecemo zajedno",
+      postDate: "1 day ago",
       likes: [
         { name: "Kilibarda", lastName: "Petrovska" },
         { name: "Petar", lastName: "Pan" },

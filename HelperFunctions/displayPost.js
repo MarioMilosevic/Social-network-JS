@@ -3,17 +3,17 @@
 import { posts } from "../main";
 
 export const displayPost = (user) => {
-    const userPosts = user.getPosts()
+  const userPosts = user.getPosts();
 
-    userPosts.forEach(post => {
-        console.log(post)
-  const li = document.createElement("li");
-  li.innerHTML = `<div class="post">
+  userPosts.forEach((post) => {
+    // console.log(post);
+    const li = document.createElement("li");
+    li.innerHTML = `<div class="post">
 <div class="post__info">
 <img src=${user.getImg()}>
 <div class="user__post__info">
 <h2>${user.getFullName()}</h2>
-<p class="time__of__post">8 days ago</p>
+<p class="time__of__post">${post.postDate}</p>
 </div>
 </div>
 <p class="post__text">${post.postText}</p>
@@ -25,7 +25,7 @@ export const displayPost = (user) => {
 <span>${post.likes.length}</span>
 </div>
 <div class="comment__container">
-<span class="comment__number">0</span>
+<span class="comment__number">${post.comments.length}</span>
 <p class="comments__button">Comments</p>
 </div>
 </div>
@@ -61,8 +61,7 @@ export const displayPost = (user) => {
 </div>
 </div>
 </div>`;
-
-posts.append(li);
-});
-  console.log(user);
+    posts.append(li);
+  });
+//   console.log(user);
 };
