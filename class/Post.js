@@ -22,12 +22,12 @@ export class Post {
     const first = this.post.likes[0];
     let second = this.post.likes[1];
     const others = this.post.likes.toSpliced(0, 2);
-    // others.length < 2 ? '' : others
-    // console.log(second);
     return {
       first,
       second,
       others,
     };
   }
+
+  
 }

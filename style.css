@@ -349,7 +349,6 @@ main {
 .likes__comments__number svg {
   width: 2.5rem;
   height: 2.5rem;
-  cursor: pointer;
 }
 
 .like__button__container {

@@ -5,15 +5,7 @@ import { Post } from "../class/Post";
 
 export const displayPost = (user) => {
   const userPosts = user.getPosts();
-  // console.log(userPosts);
-  // for each
-
-  // ukoliko je prvi lajkovao, da bude prvi
-  // ukoliko su dvojica lajkovala da budu dvoje
-  // ukoliko je 2+ lajkovalo, da budu prva 2 + ostali
-
   userPosts.forEach((post) => {
-    console.log(post);
     const userPost = new Post(post);
     let firstPersonName;
     let firstPersonLastName;
@@ -109,8 +101,5 @@ export const displayPost = (user) => {
 </div>
 </div>`;
     posts.append(li);
-    console.log(userPost.getWhoLiked());
-    console.log(userPost.getWhoLiked().second);
   });
-  // console.log(user.getWhoLiked());
 };

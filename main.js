@@ -33,20 +33,49 @@ setTimeout(() => {
   displayUserInfo(mainUser);
   showFriends(mainUser);
   displayPost(mainUser);
-  const likeBtnDiv = document.querySelector(".like__button__div");
-  const likeBtnSvg = likeBtnDiv.querySelector(".like__button");
-  const likeText = likeBtnDiv.querySelector("p");
-  likeBtnDiv.addEventListener("click", function () {
-    toggleClass(likeBtnSvg, "liked");
-    toggleClass(likeText, "liked");
-  });
+//   const likeBtnDiv = document.querySelector(".like__button__div");
+//   const likeBtnSvg = likeBtnDiv.querySelector(".like__button");
+//   const likeText = likeBtnDiv.querySelector("p");
+//   likeBtnDiv.addEventListener("click", function () {
+//     toggleClass(likeBtnSvg, "liked");
+//     toggleClass(likeText, "liked");
+//   }
+//   );
 
-  const postListItem = document.querySelector(".post__list__item");
-  const commentDiv = postListItem.querySelector(".comment__button__div");
-  const hiddenCommentSection = postListItem.querySelector(".comment__section");
-  commentDiv.addEventListener("click", function () {
-    toggleClass(hiddenCommentSection, "hidden");
-  });
-//   console.log(mainUser);
+
+
+  posts.addEventListener('click',function(e){
+    const target = e.target
+    if(target.matches('.like__button__div')){
+        const likeDiv = target.closest('.like__button__div')
+        console.log(likeDiv)
+        const likeBtn = likeDiv.firstElementChild
+        const likeText = likeDiv.lastElementChild
+        toggleClass(likeBtn,'liked')
+        toggleClass(likeText,'liked')
+    }
+  })
+
+
+//   const postListItem = document.querySelectorAll(".post__list__item");
+
+
+//   postListItem.forEach(post => {
+//     const commentDivs = post.querySelector('.comment__button__div')
+//     const hiddenCommentSection = post.querySelector('.comment__section')
+    
+//   })
+//   console.log(postListItem);
+//   const commentDivs = postListItem.querySelectorAll(".comment__button__div");
+//   const hiddenCommentSections =
+//     postListItem.querySelectorAll(".comment__section");
+//     commentDivs.forEach()
+//   commentDivs.addEventListener("click", function () {
+//     hiddenCommentSections.forEach((section) => {
+//       toggleClass(section, "hidden");
+//     });
+//   }
+//   );
+  //   console.log(mainUser);
   // console.log(mainUser.getWhoLiked())
 }, 1500);
