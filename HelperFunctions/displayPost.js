@@ -48,7 +48,7 @@ export const displayPost = (user) => {
 <p class="comment__button">Comment</p>
 </div>
 </div>
-<div class="comment__section">
+<div class="comment__section hidden">
 <div class="comment__section__addComment hidden">
 <img src="${user.img}">
 <input type="text" class="comment__input" placeholder="Write a comment">
