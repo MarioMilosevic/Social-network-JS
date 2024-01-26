@@ -1,8 +1,8 @@
 "use strict";
-import {friendList, friendsText, totalFriendsNumber } from '../main'
+import { friendList, friendsText, totalFriendsNumber } from "../main";
 export const showFriends = (user) => {
-  friendsText.textContent =  `Friends`
-  totalFriendsNumber.textContent = `${user.getFriendsNumber()} friends`
+  friendsText.textContent = `Friends`;
+  totalFriendsNumber.textContent = `${user.getFriendsNumber()} friends`;
   // const friends = [...user.getFriendsArr()];
   const friends = user.getFriendsArr();
   friends.forEach((f) => {
@@ -13,3 +13,5 @@ export const showFriends = (user) => {
     friendList.appendChild(friend);
   });
 };
+
+

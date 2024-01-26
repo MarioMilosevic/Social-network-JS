@@ -21,7 +21,6 @@ export const friendsText = friendsInfo.querySelector('h2')
 export const totalFriendsNumber = friendsInfo.querySelector('p')
 export const posts = document.querySelector('.posts')
 
-
 // Class instances
 const globalState = new GlobalState()
 export const mainUser = new User(user);
@@ -33,7 +32,14 @@ setTimeout(() => {
     displayUserInfo(mainUser)
     showFriends(mainUser);
     displayPost(mainUser)
+    const likeBtnDiv = document.querySelector('.like__button__div')
+    const likeBtnSvg = likeBtnDiv.querySelector('.like__button')
+    const likeText = likeBtnDiv.querySelector('p')
+    likeBtnDiv.addEventListener('click', function(){
+        likeBtnSvg.classList.toggle('liked')
+        likeText.classList.toggle('liked')
+    })
     console.log(mainUser);
-    console.log(mainUser.getWhoLiked())
+    // console.log(mainUser.getWhoLiked())
 }, 1500);
 

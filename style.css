@@ -1,6 +1,7 @@
 :root {
   --primary--color--: #e6e6ff;
   /* --secondary--color--: #e6e6ff; */
+  --liked--color--:#0000e6;
   --white--color: #fff;
 }
 
@@ -390,12 +391,18 @@ main {
   border-top: 1px solid var(--primary--color--);
   border-bottom: 1px solid var(--primary--color--);
   transition: 0.3s;
+  border-radius: 1.6rem;
+
+}
+
+.liked {
+  color: var(--liked--color--);
+  fill: var(--liked--color--);
 }
 
 .like__button__div:hover,
 .comment__button__div:hover {
   background-color: var(--primary--color--);
-  border-radius: 1.6rem;
 }
 
 .like__button__div svg {

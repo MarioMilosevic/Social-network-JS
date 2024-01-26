@@ -66,3 +66,5 @@ export const displayPost = (user) => {
   });
   console.log(user.getWhoLiked());
 };
+
+
