@@ -8,6 +8,7 @@ export const displayPost = (user) => {
   userPosts.forEach((post) => {
     // console.log(post);
     const li = document.createElement("li");
+    li.classList.add('post__list__item')
     li.innerHTML = `<div class="post">
 <div class="post__info">
 <img src=${user.getImg()}>
@@ -49,7 +50,7 @@ export const displayPost = (user) => {
 </div>
 </div>
 <div class="comment__section hidden">
-<div class="comment__section__addComment hidden">
+<div class="comment__section__addComment">
 <img src="${user.img}">
 <input type="text" class="comment__input" placeholder="Write a comment">
 </div>
