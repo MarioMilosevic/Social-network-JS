@@ -41,13 +41,12 @@ setTimeout(() => {
     toggleClass(likeText, "liked");
   });
 
-const postListItem = document.querySelector('.post__list__item')
-    const commentDiv =  postListItem.querySelector('.comment__button__div')
-    const hidden = postListItem.querySelector('.comment__section')
-    commentDiv.addEventListener('click', function(){
-        toggleClass(hidden,'hidden')
-    })
-    console.log(hidden);
-  console.log(mainUser);
+  const postListItem = document.querySelector(".post__list__item");
+  const commentDiv = postListItem.querySelector(".comment__button__div");
+  const hiddenCommentSection = postListItem.querySelector(".comment__section");
+  commentDiv.addEventListener("click", function () {
+    toggleClass(hiddenCommentSection, "hidden");
+  });
+//   console.log(mainUser);
   // console.log(mainUser.getWhoLiked())
 }, 1500);
