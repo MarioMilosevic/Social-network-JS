@@ -15,17 +15,18 @@ export const displayPost = (user) => {
   userPosts.forEach((post) => {
     console.log(post);
     const userPost = new Post(post);
-    let firstPersonName,
-      firstPersonLastName,
-      secondPersonName,
-      secondPersonLastName,
-      othersLength;
-
+    let firstPersonName;
+    let firstPersonLastName;
+    let secondPersonName;
+    let secondPersonLastName;
+    let othersLength;
+    let likedTextContent;
     if (userPost.getLikesLength() === 2) {
       firstPersonName = userPost.getWhoLiked().first.name;
       firstPersonLastName = userPost.getWhoLiked().first.lastName;
       secondPersonName = userPost.getWhoLiked().second.name;
       secondPersonLastName = userPost.getWhoLiked().second.lastName;
+      likedTextContent = `${firstPersonName} ${firstPersonLastName} and ${secondPersonName} ${secondPersonLastName}`;
     }
     if (userPost.getLikesLength() === 1) {
       firstPersonName = userPost.getWhoLiked().first.name;
@@ -33,6 +34,7 @@ export const displayPost = (user) => {
       secondPersonLastName = "";
       secondPersonName = "";
       othersLength = "";
+      likedTextContent = `${firstPersonName} ${firstPersonLastName}`;
     }
     if (userPost.getLikesLength() === 0) {
       firstPersonLastName = "";
@@ -40,6 +42,7 @@ export const displayPost = (user) => {
       secondPersonLastName = "";
       secondPersonName = "";
       othersLength = "";
+      likedTextContent = "";
     }
     if (userPost.getLikesLength() > 2) {
       firstPersonName = userPost.getWhoLiked().first.name;
@@ -47,6 +50,7 @@ export const displayPost = (user) => {
       secondPersonName = userPost.getWhoLiked().second.name;
       secondPersonLastName = userPost.getWhoLiked().second.lastName;
       othersLength = userPost.getWhoLiked().others.length;
+      likedTextContent = `${firstPersonName} ${firstPersonLastName}, ${secondPersonName} ${secondPersonLastName} and ${othersLength} more`;
     }
     const li = document.createElement("li");
     li.classList.add("post__list__item");
@@ -66,7 +70,7 @@ export const displayPost = (user) => {
 </svg>
 <span>${userPost.getLikesLength()}</span>
 </div>
-<p class="liked__by">${firstPersonName} ${firstPersonLastName}, ${secondPersonName} ${secondPersonLastName} and ${othersLength} others liked this.</p>
+<p class="liked__by">${likedTextContent}</p>
 <div class="comment__container">
 <span class="comment__number">${post.comments.length}</span>
 <p class="comments__button">Comments</p>
