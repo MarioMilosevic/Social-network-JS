@@ -447,6 +447,7 @@ main {
   padding: 1rem;
   border-radius: 1rem;
   border: none;
+  background-color: var(--primary--color--);
 }
 
 .comments__button {
@@ -473,16 +474,19 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
   background-color: var(--white--color);
   border-radius: 1.6rem;
 }
 
 .comment h2 {
   font-size: 1.6rem;
+  padding-left: 1rem;
 }
 
 .comment p {
+  background-color: var(--primary--color--);
+  padding: 1rem;
+  border-radius: 1.6rem;
   margin-top: 0.5rem;
   font-size: 1.4rem;
 }

@@ -9,15 +9,16 @@ export const displayPost = (user) => {
   // for each
   userPosts.forEach((post) => {
     const userPost = new Post(post);
-    // console.log("USERPOST", userPost);
-    // console.log(userPost.getComments());
     let firstPersonName;
     let firstPersonLastName;
     let secondPersonName;
     let secondPersonLastName;
     let othersLength;
     let likedTextContent;
-    let commentsLength = userPost.getCommentsLength() > 0 ? `${userPost.getCommentsLength()}  Comments` : ''
+    let commentsLength =
+      userPost.getCommentsLength() > 0
+        ? `${userPost.getCommentsLength()}  Comments`
+        : "";
     if (userPost.getLikesLength() === 2) {
       firstPersonName = userPost.getWhoLiked().first.name;
       firstPersonLastName = userPost.getWhoLiked().first.lastName;
@@ -96,29 +97,11 @@ export const displayPost = (user) => {
 </div>
 
 <div class="comment__section__hidden hidden"></div>
-`
-const hiddenCommentSection = li.querySelector('.comment__section__hidden')
+`;
+    const hiddenCommentSection = li.querySelector(".comment__section__hidden");
 
-
-displayComments(hiddenCommentSection,userPost)
-posts.append(li);
-// kraj for ica
-});
+    displayComments(hiddenCommentSection, userPost);
+    posts.append(li);
+    // kraj for ica
+  });
 };
-
-
-
-// <div class="comment__section hidden">
-// <div class="comment__section__addComment">
-// <img src="${user.img}">
-// <input type="text" class="comment__input" placeholder="Write a comment">
-// </div>
-
-// <div class="comment__info">
-// <img src="${user.getImg()}">
-// <div class="comment">
-// <h2>${user.getFullName()}</h2>
-// <p>${userPost}</p>
-// </div>
-// </div>
-// </div>`;

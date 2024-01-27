@@ -5,6 +5,8 @@ import { showFriends } from "./HelperFunctions/showFriends.js";
 import { displayUserInfo } from "./HelperFunctions/displayUserInfo.js";
 import { displayPost } from "./HelperFunctions/displayPost.js";
 import { toggleClass } from "./HelperFunctions/ToggleClass.js";
+import { showComments } from "./HelperFunctions/showComments.js";
+import { giveLike } from "./HelperFunctions/giveLike.js";
 import { GlobalState } from "./class/GlobalState.js";
 
 // Query selectors
@@ -37,27 +39,14 @@ setTimeout(() => {
   posts.addEventListener("click", function (e) {
     const target = e.target;
     if (target.matches(".like__button__div")) {
-      const likeDiv = target.closest(".like__button__div");
-      const likeBtn = likeDiv.firstElementChild;
-      const likeText = likeDiv.lastElementChild;
-      toggleClass(likeBtn, "liked");
-      toggleClass(likeText, "liked");
+      giveLike(target);
     }
-
     if (
       target.matches(".comment__button__div") ||
       target.matches(".comment__button") ||
       target.matches(".comment__svg")
     ) {
-      // TREBACE MI OVAJ KOD ALI NE ZA OVAJ DIV
-      const commentDiv = target.closest(".comment__button__div");
-      console.log(commentDiv);
-      console.dir(commentDiv);
-      const hiddenCommentSection = commentDiv.parentElement.parentElement.lastElementChild;
-      console.log(hiddenCommentSection);
-      // .comment__section__hidden
-      toggleClass(hiddenCommentSection, "hidden");
-      // displayComments()
+      showComments(target);
     }
   });
 }, 1500);

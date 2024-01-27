@@ -100,14 +100,7 @@ export const user = {
           lastName: "Haund",
         },
       ],
-      // trebam promjeniti
-      comments: [{
-        name: "Gordana",
-        lastName: "Stouns",
-        commentText: "OVO MORAM DA IZBRISEM",
-        img: "/img/friendImages/friend1.jpeg",
-      },],
-      // trebam promjeniti
+      comments: [],
     },
     {
       id: crypto.randomUUID(),

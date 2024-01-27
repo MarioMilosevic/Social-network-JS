@@ -33,16 +33,12 @@ export class Post {
     return this.post.comments.length;
   }
 
-  getCommentImg(){
-    return this.post.comments[0].img
+  addComment(comment) {
+    this.post.comment.push(comment);
   }
 
-  getCommentUserFullName(){
-   return  `${this.post.comments[0].name} ${this.post.comments[0].lastName}` 
-  }
-
-  getCommentsArr(){
-    return this.post.comments
+  getCommentsArr() {
+    return this.post.comments;
   }
 
   getComments() {
