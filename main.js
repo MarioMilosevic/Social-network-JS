@@ -38,7 +38,6 @@ setTimeout(() => {
     const target = e.target;
     if (target.matches(".like__button__div")) {
       const likeDiv = target.closest(".like__button__div");
-      console.log(likeDiv);
       const likeBtn = likeDiv.firstElementChild;
       const likeText = likeDiv.lastElementChild;
       toggleClass(likeBtn, "liked");

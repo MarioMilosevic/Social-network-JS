@@ -29,5 +29,24 @@ export class Post {
     };
   }
 
-  
+  getCommentsLength() {
+    return this.post.comments.length;
+  }
+
+  getComments() {
+    const comments = this.post.comments;
+    let firstName;
+    let secondName;
+    let commentText;
+    comments.forEach((comment) => {
+      firstName = comment.name;
+      secondName = comment.lastName;
+      commentText = comment.commentText;
+    });
+    return {
+      firstName,
+      secondName,
+      commentText,
+    };
+  }
 }

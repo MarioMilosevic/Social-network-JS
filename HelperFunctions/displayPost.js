@@ -5,14 +5,19 @@ import { Post } from "../class/Post";
 
 export const displayPost = (user) => {
   const userPosts = user.getPosts();
+  // for each
   userPosts.forEach((post) => {
     const userPost = new Post(post);
+    // console.log("USERPOST", userPost);
+    // console.log(userPost.getComments());
     let firstPersonName;
     let firstPersonLastName;
     let secondPersonName;
     let secondPersonLastName;
     let othersLength;
     let likedTextContent;
+    let commentsLength = userPost.getCommentsLength() > 0 ? `${userPost.getCommentsLength()}  Comments` : ''
+    console.log(commentsLength);
     if (userPost.getLikesLength() === 2) {
       firstPersonName = userPost.getWhoLiked().first.name;
       firstPersonLastName = userPost.getWhoLiked().first.lastName;
@@ -64,8 +69,7 @@ export const displayPost = (user) => {
 </div>
 <p class="liked__by">${likedTextContent}</p>
 <div class="comment__container">
-<span class="comment__number">${post.comments.length}</span>
-<p class="comments__button">Comments</p>
+<span class="comment__number">${commentsLength}</span>
 </div>
 </div>
 </div>
@@ -96,7 +100,7 @@ export const displayPost = (user) => {
 <img src="${user.getImg()}">
 <div class="comment">
 <h2>${user.getFullName()}</h2>
-<p>Ovo je probni komentar</p>
+<p>${userPost}</p>
 </div>
 </div>
 </div>`;
