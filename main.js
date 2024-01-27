@@ -50,10 +50,13 @@ setTimeout(() => {
       target.matches(".comment__svg")
     ) {
       // TREBACE MI OVAJ KOD ALI NE ZA OVAJ DIV
-      // const commentDiv = target.closest(".comment__button__div");
-      // const hiddenCommentSection = commentDiv.parentElement.nextElementSibling;
-      // console.log(hiddenCommentSection);
-      // toggleClass(hiddenCommentSection, "hidden");
+      const commentDiv = target.closest(".comment__button__div");
+      console.log(commentDiv);
+      console.dir(commentDiv);
+      const hiddenCommentSection = commentDiv.parentElement.parentElement.lastElementChild;
+      console.log(hiddenCommentSection);
+      // .comment__section__hidden
+      toggleClass(hiddenCommentSection, "hidden");
       // displayComments()
     }
   });

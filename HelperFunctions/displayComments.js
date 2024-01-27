@@ -1,11 +1,11 @@
 "use strict";
 
-export const displayComments = (li, userPost) => {
+export const displayComments = (hiddenCommentSection, userPost) => {
 //   console.log(userPost.getCommentsArr());
   const commentsList = userPost.getCommentsArr();
   commentsList.forEach((comment) => {
     // console.log(comment);
-    // console.log('LIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII',li);
+    // console.log('LIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII',hiddenCommentSection);
     const commentDiv = document.createElement("div");
     // commentDiv.classList.add("comment__section", "hidden");
     commentDiv.classList.add("comment__section");
@@ -20,7 +20,7 @@ export const displayComments = (li, userPost) => {
 </div>
 </div>
 `;
-li.appendChild(commentDiv);
+hiddenCommentSection.appendChild(commentDiv);
 
     // `<div class="comment__section__addComment">
     // <p>neka slika</p>

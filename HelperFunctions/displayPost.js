@@ -94,9 +94,13 @@ export const displayPost = (user) => {
 <img src="${user.getImg()}">
 <input type="text" class="comment__input" placeholder="Write a comment">
 </div>
-`
 
-displayComments(li,userPost)
+<div class="comment__section__hidden hidden"></div>
+`
+const hiddenCommentSection = li.querySelector('.comment__section__hidden')
+
+
+displayComments(hiddenCommentSection,userPost)
 posts.append(li);
 // kraj for ica
 });

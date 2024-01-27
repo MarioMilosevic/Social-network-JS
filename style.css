@@ -1,7 +1,7 @@
 :root {
   --primary--color--: #e6e6ff;
   /* --secondary--color--: #e6e6ff; */
-  --liked--color--:#0000e6;
+  --liked--color--: #0000e6;
   --white--color: #fff;
 }
 
@@ -369,7 +369,7 @@ main {
   border-bottom: 1px solid transparent;
 }
 
-.comment__container:hover{
+.comment__container:hover {
   border-bottom: 1px solid var(--primary--color--);
 }
 
@@ -391,7 +391,6 @@ main {
   border-bottom: 1px solid var(--primary--color--);
   transition: 0.3s;
   border-radius: 1.6rem;
-
 }
 
 .liked {
@@ -426,9 +425,8 @@ main {
   font-size: 1.6rem;
 }
 
-
-
-.comment__section img, .comment__section__addComment img {
+.comment__section img,
+.comment__section__addComment img {
   width: 4rem;
   height: 4rem;
 }
@@ -463,6 +461,10 @@ main {
   margin-top: 1rem;
   align-items: center;
   /* height: 10rem; */
+}
+
+.comment__info img {
+  border-radius: 50%;
 }
 
 .comment {
