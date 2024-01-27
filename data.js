@@ -74,16 +74,19 @@ export const user = {
           name: "Gordana",
           lastName: "Stouns",
           commentText: "Hahaha, ti preludi djecace",
+          img: "/img/friendImages/friend1.jpeg",
         },
         {
           name: "Sadam",
           lastName: "Husein",
           commentText: "Mi smo dvije strane istog novcica",
+          img: "/img/friendImages/friend6.png",
         },
         {
           name: "Petar",
           lastName: "Pan",
           commentText: "Nekad kasljem, nekad vodu nosim",
+          img: "/img/friendImages/friend2.jpeg",
         },
       ],
     },
@@ -97,7 +100,14 @@ export const user = {
           lastName: "Haund",
         },
       ],
-      comments: [],
+      // trebam promjeniti
+      comments: [{
+        name: "Gordana",
+        lastName: "Stouns",
+        commentText: "OVO MORAM DA IZBRISEM",
+        img: "/img/friendImages/friend1.jpeg",
+      },],
+      // trebam promjeniti
     },
     {
       id: crypto.randomUUID(),
@@ -114,21 +124,25 @@ export const user = {
           name: "Gordana",
           lastName: "Stouns",
           commentText: "Zna se ko kosi, a ko vodu nosi",
+          img: "/img/friendImages/friend1.jpeg",
         },
         {
           name: "Sadam",
           lastName: "Husein",
           commentText: "Zaspati necu, ali umreti necu nikada",
+          img: "/img/friendImages/friend6.png",
         },
         {
           name: "Hoklberi",
           lastName: "Haund",
           commentText: "Snekakos proljeca, ja se sjetim starih drugova",
+          img: "/img/friendImages/friend5.avif",
         },
         {
           name: "Majda",
           lastName: "Odzaklijevska",
           commentText: "Plastimo sijeno na Hilandar",
+          img: "/img/friendImages/friend4.jpg",
         },
       ],
     },

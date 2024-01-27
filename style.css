@@ -428,7 +428,7 @@ main {
 
 
 
-.comment__section img {
+.comment__section img, .comment__section__addComment img {
   width: 4rem;
   height: 4rem;
 }

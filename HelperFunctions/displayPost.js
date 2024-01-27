@@ -2,6 +2,7 @@
 
 import { posts } from "../main";
 import { Post } from "../class/Post";
+import { displayComments } from "./displayComments";
 
 export const displayPost = (user) => {
   const userPosts = user.getPosts();
@@ -17,7 +18,6 @@ export const displayPost = (user) => {
     let othersLength;
     let likedTextContent;
     let commentsLength = userPost.getCommentsLength() > 0 ? `${userPost.getCommentsLength()}  Comments` : ''
-    console.log(commentsLength);
     if (userPost.getLikesLength() === 2) {
       firstPersonName = userPost.getWhoLiked().first.name;
       firstPersonLastName = userPost.getWhoLiked().first.lastName;
@@ -90,20 +90,31 @@ export const displayPost = (user) => {
 <p class="comment__button">Comment</p>
 </div>
 </div>
-<div class="comment__section hidden">
 <div class="comment__section__addComment">
-<img src="${user.img}">
+<img src="${user.getImg()}">
 <input type="text" class="comment__input" placeholder="Write a comment">
 </div>
+`
 
-<div class="comment__info">
-<img src="${user.getImg()}">
-<div class="comment">
-<h2>${user.getFullName()}</h2>
-<p>${userPost}</p>
-</div>
-</div>
-</div>`;
-    posts.append(li);
-  });
+displayComments(li,userPost)
+posts.append(li);
+// kraj for ica
+});
 };
+
+
+
+// <div class="comment__section hidden">
+// <div class="comment__section__addComment">
+// <img src="${user.img}">
+// <input type="text" class="comment__input" placeholder="Write a comment">
+// </div>
+
+// <div class="comment__info">
+// <img src="${user.getImg()}">
+// <div class="comment">
+// <h2>${user.getFullName()}</h2>
+// <p>${userPost}</p>
+// </div>
+// </div>
+// </div>`;
