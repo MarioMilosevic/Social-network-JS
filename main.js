@@ -6,7 +6,7 @@ import { displayUserInfo } from "./HelperFunctions/displayUserInfo.js";
 import { displayPost } from "./HelperFunctions/displayPost.js";
 import { toggleClass } from "./HelperFunctions/ToggleClass.js";
 import { showComments } from "./HelperFunctions/showComments.js";
-import { giveLike } from "./HelperFunctions/giveLike.js";
+import { toggleLike } from "./HelperFunctions/toggleLike.js";
 import { GlobalState } from "./class/GlobalState.js";
 
 // Query selectors
@@ -39,7 +39,8 @@ setTimeout(() => {
   posts.addEventListener("click", function (e) {
     const target = e.target;
     if (target.matches(".like__button__div")) {
-      giveLike(target);
+      toggleLike(target);
+      // displayPost(mainUser)
     }
     if (
       target.matches(".comment__button__div") ||
@@ -48,5 +49,14 @@ setTimeout(() => {
     ) {
       showComments(target);
     }
+
+    if (target.matches(".comment__input")) {
+      const input = target.closest(".comment__input");
+      console.log(input.value);
+    }
   });
 }, 1500);
+
+// TREBA DA NA LAJK SE POVECA BROJ I TAKO U STEJTU ONOM
+// TREBAM DA SAM MOGU DA KOMENTARISEM
+// NA KLIK GORE DESNO PROFIL DA SE POJAVI LOG OUT I OSTALO

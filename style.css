@@ -271,6 +271,7 @@ main {
   width: 18rem;
   height: 18rem;
   border-radius: 2rem;
+  object-fit: cover;
 }
 
 .friend__list__item p {
