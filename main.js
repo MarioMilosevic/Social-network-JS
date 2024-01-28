@@ -8,6 +8,7 @@ import { toggleClass } from "./HelperFunctions/ToggleClass.js";
 import { showComments } from "./HelperFunctions/showComments.js";
 import { GlobalState } from "./class/GlobalState.js";
 import { Post } from "./class/Post.js";
+import { displayComments } from "./HelperFunctions/displayComments.js";
 // Query selectors
 
 const app = document.querySelector("#app");
@@ -48,12 +49,12 @@ setTimeout(() => {
     if (target.matches(".comment__input")) {
       const input = target.closest(".comment__input");
       const li = target.closest(".post__list__item");
+      const commentSectionHidden = li.lastElementChild
+      console.log(commentSectionHidden);
       const selectedPost = mainUser.findPost(li.id);
       const newUserPost = new Post(selectedPost);
-      // console.log(li);
-      // console.log(input.value);
       input.addEventListener("keydown", function (e) {
-        if (e.keyCode === 13) {
+        if (e.keyCode === 13 && input.value !== '') {
           const userComment = {
             name: mainUser.getFirstName(),
             lastName: mainUser.getLastName(),
@@ -63,13 +64,14 @@ setTimeout(() => {
           newUserPost.addComment(userComment);
           console.log("enter");
           console.log(newUserPost.getCommentsArr());
+          input.value = "";
+          commentSectionHidden.innerHTML = ''
+          displayComments(commentSectionHidden,newUserPost)
         }
       });
 
-      // selectedPost.addComment(userComment)
     }
   });
 }, 1500);
 
-// TREBAM DA SAM MOGU DA KOMENTARISEM
 // NA KLIK GORE DESNO PROFIL DA SE POJAVI LOG OUT I OSTALO
