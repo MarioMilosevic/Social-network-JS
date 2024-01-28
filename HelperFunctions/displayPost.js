@@ -3,7 +3,7 @@
 import { posts } from "../main";
 import { Post } from "../class/Post";
 import { displayComments } from "./displayComments";
-import { toggleClass } from "./ToggleClass";
+import { toggleClass } from "./toggleClass";
 export const displayPost = (user) => {
   const userPosts = user.getPosts();
   // posts.innerHTML = "";
@@ -46,7 +46,7 @@ export const displayPost = (user) => {
         likedTextContent = `${firstPersonName} ${firstPersonLastName} ${secondPersonName} ${secondPersonLastName} and ${othersLength} others like this`;
     }
     const li = document.createElement("li");
-    li.id = userPost.getID()
+    li.id = userPost.getID();
     li.classList.add("post__list__item");
     li.innerHTML = `<div class="post">
 <div class="post__info">
@@ -89,7 +89,7 @@ export const displayPost = (user) => {
 </div>
 <div class="comment__section__addComment">
 <img src="${user.getImg()}">
-<input type="text" class="comment__input" placeholder="Write a comment">
+<input type="text" id="${userPost.getID()}" class="comment__input" placeholder="Write a comment">
 </div>
 
 <div class="comment__section__hidden hidden"></div>

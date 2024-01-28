@@ -55,8 +55,9 @@ body {
   height: 4%;
   display: flex;
   justify-content: space-between;
-  padding: 0.6rem 0;
+  padding: 1rem;
   border-bottom: 1px solid var(--primary--color--);
+  position: relative;
 }
 
 .main__navigation button img {
@@ -102,6 +103,43 @@ body {
   appearance: none;
   outline: transparent 2px solid;
 }
+
+.log__out__container {
+  /* border: 1px solid black; */
+  width: 20rem;
+  position: absolute;
+  top: 8rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white--color);
+  padding: 0rem 1.5rem;
+  border-radius: 1.6rem;
+  border: 2px solid var(--primary--color--);
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.my__profile,
+.log__out {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  width: 90%;
+  margin: 1rem 0;
+}
+
+.my__profile svg,
+.log__out svg {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--primary--color--);
+  border-radius: 1.6rem;
+  padding: 0.5rem;
+}
+
 /*  -------------------- MAIN --------------------*/
 main {
   height: 60rem;
