@@ -27,7 +27,7 @@ export const displayPost = (user) => {
       firstPersonLastName = userPost.getWhoLiked().first.lastName;
       secondPersonName = userPost.getWhoLiked().second.name;
       secondPersonLastName = userPost.getWhoLiked().second.lastName;
-      likedTextContent = `${firstPersonName} ${firstPersonLastName} and ${secondPersonName} ${secondPersonLastName}`;
+      likedTextContent = `${firstPersonName} ${firstPersonLastName} and ${secondPersonName} ${secondPersonLastName} like this`;
     }
     if (userPost.getLikesLength() === 1) {
       firstPersonName = userPost.getWhoLiked().first.name;
@@ -35,7 +35,7 @@ export const displayPost = (user) => {
       secondPersonLastName = "";
       secondPersonName = "";
       othersLength = "";
-      likedTextContent = `${firstPersonName} ${firstPersonLastName}`;
+      likedTextContent = `${firstPersonName} ${firstPersonLastName} like this`;
     }
     if (userPost.getLikesLength() === 0) {
       firstPersonLastName = "";
@@ -51,7 +51,7 @@ export const displayPost = (user) => {
       secondPersonName = userPost.getWhoLiked().second.name;
       secondPersonLastName = userPost.getWhoLiked().second.lastName;
       othersLength = userPost.getWhoLiked().others.length;
-      likedTextContent = `${firstPersonName} ${firstPersonLastName}, ${secondPersonName} ${secondPersonLastName} and ${othersLength} more`;
+      likedTextContent = `${firstPersonName} ${firstPersonLastName}, ${secondPersonName} ${secondPersonLastName} and ${othersLength} more like this`;
     }
     const li = document.createElement("li");
     li.classList.add("post__list__item");
@@ -109,17 +109,18 @@ export const displayPost = (user) => {
       const likeButtonContainerSpan = li.querySelector(
         ".like__button__container__span"
       );
+      const likedByP = li.querySelector('.liked__by')
       if (likeButtonDiv.classList.contains("liked")) {
         userPost.removeLike();
+        likedByP.textContent = likedTextContent
         likeButtonContainerSpan.textContent = userPost.getLikesLength();
         toggleClass(likeButtonDiv, "liked");
-        console.log("prvo");
       } else {
         userPost.addLike(newLike);
-        displayPost(user);
+        likedByP.textContent = `You, ${likedTextContent}`
+        // displayPost(user);
         likeButtonContainerSpan.textContent = userPost.getLikesLength();
         toggleClass(likeButtonDiv, "liked");
-        console.log("drugo");
       }
     });
 
