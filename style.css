@@ -114,11 +114,10 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: var(--white--color);
-  padding: 0rem 1.5rem;
   border-radius: 1.6rem;
   border: 2px solid var(--primary--color--);
-  visibility: hidden;
-  transition: all 0.5s;
+  transition: all 0.3s;
+  transform: scale(0.8);
 }
 
 .my__profile,
@@ -127,8 +126,10 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
-  width: 90%;
-  margin: 1rem 0;
+  padding:1rem;
+  width: 100%;
+  border-radius: 1.6rem;
+  cursor: pointer;
 }
 
 .my__profile svg,
@@ -138,6 +139,21 @@ body {
   background-color: var(--primary--color--);
   border-radius: 1.6rem;
   padding: 0.5rem;
+}
+
+.my__profile:hover, .log__out:hover {
+  background-color: var(--primary--color--);
+}
+
+.not__visible{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible{
+  visibility: visible;
+  opacity: 1;
+  transform: none;
 }
 
 /*  -------------------- MAIN --------------------*/
@@ -533,3 +549,6 @@ main {
 .hidden {
   display: none;
 }
+
+
+

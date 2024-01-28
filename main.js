@@ -21,7 +21,8 @@ const friendsInfo = document.querySelector(".friends__info");
 export const friendsText = friendsInfo.querySelector("h2");
 export const totalFriendsNumber = friendsInfo.querySelector("p");
 export const posts = document.querySelector(".posts");
-const navBtn = document.querySelector('.nav__btn')
+const navBtn = document.querySelector(".nav__btn");
+const logOut = document.querySelector(".log__out__container");
 // Class instances
 const globalState = new GlobalState();
 export const mainUser = new User(user);
@@ -49,6 +50,12 @@ setTimeout(() => {
 }, 1500);
 
 // NA KLIK GORE DESNO PROFIL DA SE POJAVI LOG OUT I OSTALO
-navBtn.addEventListener('click', function(){
-  console.log('dugme');
-})
+navBtn.addEventListener("click", function () {
+  if (logOut.classList.contains('not__visible')){
+    logOut.classList.remove('not__visible');
+    logOut.classList.add('visible');
+  } else {
+    logOut.classList.add('not__visible')
+    logOut.classList.remove('visible')
+  }
+});
