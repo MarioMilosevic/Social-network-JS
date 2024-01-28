@@ -6,9 +6,8 @@ import { displayUserInfo } from "./HelperFunctions/displayUserInfo.js";
 import { displayPost } from "./HelperFunctions/displayPost.js";
 import { toggleClass } from "./HelperFunctions/ToggleClass.js";
 import { showComments } from "./HelperFunctions/showComments.js";
-import { toggleLike } from "./HelperFunctions/toggleLike.js";
 import { GlobalState } from "./class/GlobalState.js";
-
+import { Post } from "./class/Post.js";
 // Query selectors
 
 const app = document.querySelector("#app");
@@ -27,7 +26,7 @@ export const posts = document.querySelector(".posts");
 // Class instances
 const globalState = new GlobalState();
 export const mainUser = new User(user);
-
+// console.log(mainUser);
 setTimeout(() => {
   loadingSpinner.style.display = "none";
   app.style.opacity = 1;
@@ -48,11 +47,29 @@ setTimeout(() => {
 
     if (target.matches(".comment__input")) {
       const input = target.closest(".comment__input");
-      console.log(input.value);
+      const li = target.closest(".post__list__item");
+      const selectedPost = mainUser.findPost(li.id);
+      const newUserPost = new Post(selectedPost);
+      // console.log(li);
+      // console.log(input.value);
+      input.addEventListener("keydown", function (e) {
+        if (e.keyCode === 13) {
+          const userComment = {
+            name: mainUser.getFirstName(),
+            lastName: mainUser.getLastName(),
+            commentText: input.value,
+            img: mainUser.getImg(),
+          };
+          newUserPost.addComment(userComment);
+          console.log("enter");
+          console.log(newUserPost.getCommentsArr());
+        }
+      });
+
+      // selectedPost.addComment(userComment)
     }
   });
 }, 1500);
 
-// TREBA DA NA LAJK SE POVECA BROJ I TAKO U STEJTU ONOM
 // TREBAM DA SAM MOGU DA KOMENTARISEM
 // NA KLIK GORE DESNO PROFIL DA SE POJAVI LOG OUT I OSTALO

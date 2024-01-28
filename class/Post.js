@@ -46,7 +46,7 @@ export class Post {
   }
 
   addComment(comment) {
-    this.post.comment.push(comment);
+    this.post.comments.push(comment);
   }
 
   getCommentsArr() {
@@ -68,5 +68,9 @@ export class Post {
       secondName,
       commentText,
     };
+  }
+
+  getID(){
+    return this.post.id
   }
 }

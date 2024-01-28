@@ -3,7 +3,6 @@
 import { posts } from "../main";
 import { Post } from "../class/Post";
 import { displayComments } from "./displayComments";
-import { toggleLike } from "./toggleLike";
 import { toggleClass } from "./ToggleClass";
 export const displayPost = (user) => {
   const userPosts = user.getPosts();
@@ -11,6 +10,7 @@ export const displayPost = (user) => {
   // for each
   userPosts.forEach((post) => {
     const userPost = new Post(post);
+    // console.log(userPost);
     let firstPersonName;
     let firstPersonLastName;
     let secondPersonName;
@@ -43,9 +43,10 @@ export const displayPost = (user) => {
           (secondPersonName = user.getWhoLiked().second.name),
           (secondPersonLastName = userPost.getWhoLiked().second.lastName),
           (othersLength = userPost.getWhoLiked().others.length);
-        likedTextContent = `${firstPersonName} ${firstPersonLastName} ${secondPersonName} ${secondPersonLastName} and ${othersLength}`;
+        likedTextContent = `${firstPersonName} ${firstPersonLastName} ${secondPersonName} ${secondPersonLastName} and ${othersLength} others like this`;
     }
     const li = document.createElement("li");
+    li.id = userPost.getID()
     li.classList.add("post__list__item");
     li.innerHTML = `<div class="post">
 <div class="post__info">
@@ -110,7 +111,6 @@ export const displayPost = (user) => {
       } else {
         userPost.addLike(newLike);
         likedByP.textContent = `You, ${likedTextContent}`;
-        // displayPost(user);
         likeButtonContainerSpan.textContent = userPost.getLikesLength();
         toggleClass(likeButtonDiv, "liked");
       }

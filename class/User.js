@@ -25,6 +25,14 @@ export class User {
     return `${this.user.name} ${this.user.lastName}`;
   }
 
+  getFirstName(){
+    return this.user.name
+  }
+
+  getLastName(){
+    return this.user.lastName
+  }
+
   getFriendsArr() {
     return this.user.friends;
   }
@@ -60,11 +68,11 @@ export class User {
     };
   }
 
-  // displayWhoLiked(){
-  //   const  this.getWhoLiked()
-  // }
-
   getPostDate() {
     return this.user.postDate;
+  }
+
+  findPost(id){
+   return this.user.posts.find(post => post.id === id)
   }
 }
