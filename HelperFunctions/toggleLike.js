@@ -1,6 +1,6 @@
 "use strict";
 import { toggleClass } from "./ToggleClass";
-
+import { Post } from "../class/Post";
 export const toggleLike = (target) => {
   const likeDiv = target.closest(".like__button__div");
   console.log(likeDiv);
@@ -11,4 +11,6 @@ export const toggleLike = (target) => {
   const likeText = likeDiv.lastElementChild;
   toggleClass(likeBtn, "liked");
   toggleClass(likeText, "liked");
+  // const newLike = {}
+  // user.addLike(newLike)
 };

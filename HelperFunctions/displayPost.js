@@ -3,12 +3,15 @@
 import { posts } from "../main";
 import { Post } from "../class/Post";
 import { displayComments } from "./displayComments";
-
+import { toggleLike } from "./toggleLike";
+import { toggleClass } from "./ToggleClass";
 export const displayPost = (user) => {
   const userPosts = user.getPosts();
+  // posts.innerHTML = "";
   // for each
   userPosts.forEach((post) => {
     const userPost = new Post(post);
+    console.log(userPost.getLikesArr());
     let firstPersonName;
     let firstPersonLastName;
     let secondPersonName;
@@ -99,6 +102,26 @@ export const displayPost = (user) => {
 <div class="comment__section__hidden hidden"></div>
 `;
     const hiddenCommentSection = li.querySelector(".comment__section__hidden");
+
+    const likeButtonDiv = li.querySelector(".like__button__div");
+    likeButtonDiv.addEventListener("click", function () {
+      const newLike = {};
+      const likeButtonContainerSpan = li.querySelector(
+        ".like__button__container__span"
+      );
+      if (likeButtonDiv.classList.contains("liked")) {
+        userPost.removeLike();
+        likeButtonContainerSpan.textContent = userPost.getLikesLength();
+        toggleClass(likeButtonDiv, "liked");
+        console.log("prvo");
+      } else {
+        userPost.addLike(newLike);
+        displayPost(user);
+        likeButtonContainerSpan.textContent = userPost.getLikesLength();
+        toggleClass(likeButtonDiv, "liked");
+        console.log("drugo");
+      }
+    });
 
     displayComments(hiddenCommentSection, userPost);
     posts.append(li);

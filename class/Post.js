@@ -14,6 +14,18 @@ export class Post {
     return this.post.postText;
   }
 
+  addLike(like){
+    this.post.likes.push(like)
+  }
+
+  getLikesArr(){
+    return this.post.likes
+  }
+
+  removeLike(){
+    return this.post.likes.pop()
+  }
+
   getLikesLength() {
     return this.post.likes.length;
   }
