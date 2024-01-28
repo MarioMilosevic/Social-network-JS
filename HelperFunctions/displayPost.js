@@ -11,7 +11,6 @@ export const displayPost = (user) => {
   // for each
   userPosts.forEach((post) => {
     const userPost = new Post(post);
-    console.log(userPost.getLikesArr());
     let firstPersonName;
     let firstPersonLastName;
     let secondPersonName;
@@ -22,36 +21,29 @@ export const displayPost = (user) => {
       userPost.getCommentsLength() > 0
         ? `${userPost.getCommentsLength()}  Comments`
         : "";
-    if (userPost.getLikesLength() === 2) {
-      firstPersonName = userPost.getWhoLiked().first.name;
-      firstPersonLastName = userPost.getWhoLiked().first.lastName;
-      secondPersonName = userPost.getWhoLiked().second.name;
-      secondPersonLastName = userPost.getWhoLiked().second.lastName;
-      likedTextContent = `${firstPersonName} ${firstPersonLastName} and ${secondPersonName} ${secondPersonLastName} like this`;
-    }
-    if (userPost.getLikesLength() === 1) {
-      firstPersonName = userPost.getWhoLiked().first.name;
-      firstPersonLastName = userPost.getWhoLiked().first.lastName;
-      secondPersonLastName = "";
-      secondPersonName = "";
-      othersLength = "";
-      likedTextContent = `${firstPersonName} ${firstPersonLastName} like this`;
-    }
-    if (userPost.getLikesLength() === 0) {
-      firstPersonLastName = "";
-      firstPersonName = "";
-      secondPersonLastName = "";
-      secondPersonName = "";
-      othersLength = "";
-      likedTextContent = "";
-    }
-    if (userPost.getLikesLength() > 2) {
-      firstPersonName = userPost.getWhoLiked().first.name;
-      firstPersonLastName = userPost.getWhoLiked().first.lastName;
-      secondPersonName = userPost.getWhoLiked().second.name;
-      secondPersonLastName = userPost.getWhoLiked().second.lastName;
-      othersLength = userPost.getWhoLiked().others.length;
-      likedTextContent = `${firstPersonName} ${firstPersonLastName}, ${secondPersonName} ${secondPersonLastName} and ${othersLength} more like this`;
+    switch (userPost.getLikesLength()) {
+      case 0:
+        likedTextContent = "";
+        break;
+      case 1:
+        (firstPersonName = userPost.getWhoLiked().first.name),
+          (firstPersonLastName = userPost.getWhoLiked().first.lastName);
+        likedTextContent = `${firstPersonName} ${firstPersonLastName} likes this`;
+        break;
+      case 2:
+        (firstPersonName = userPost.getWhoLiked().first.name),
+          (firstPersonLastName = userPost.getWhoLiked().first.lastName),
+          (secondPersonName = user.getWhoLiked().second.name),
+          (secondPersonLastName = userPost.getWhoLiked().second.lastName);
+        likedTextContent = `${firstPersonName} ${firstPersonLastName} and ${secondPersonName} ${secondPersonLastName} like this`;
+        break;
+      default:
+        (firstPersonName = userPost.getWhoLiked().first.name),
+          (firstPersonLastName = userPost.getWhoLiked().first.lastName),
+          (secondPersonName = user.getWhoLiked().second.name),
+          (secondPersonLastName = userPost.getWhoLiked().second.lastName),
+          (othersLength = userPost.getWhoLiked().others.length);
+        likedTextContent = `${firstPersonName} ${firstPersonLastName} ${secondPersonName} ${secondPersonLastName} and ${othersLength}`;
     }
     const li = document.createElement("li");
     li.classList.add("post__list__item");
@@ -109,15 +101,15 @@ export const displayPost = (user) => {
       const likeButtonContainerSpan = li.querySelector(
         ".like__button__container__span"
       );
-      const likedByP = li.querySelector('.liked__by')
+      const likedByP = li.querySelector(".liked__by");
       if (likeButtonDiv.classList.contains("liked")) {
         userPost.removeLike();
-        likedByP.textContent = likedTextContent
+        likedByP.textContent = likedTextContent;
         likeButtonContainerSpan.textContent = userPost.getLikesLength();
         toggleClass(likeButtonDiv, "liked");
       } else {
         userPost.addLike(newLike);
-        likedByP.textContent = `You, ${likedTextContent}`
+        likedByP.textContent = `You, ${likedTextContent}`;
         // displayPost(user);
         likeButtonContainerSpan.textContent = userPost.getLikesLength();
         toggleClass(likeButtonDiv, "liked");

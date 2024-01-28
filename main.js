@@ -38,11 +38,6 @@ setTimeout(() => {
 
   posts.addEventListener("click", function (e) {
     const target = e.target;
-    // if (target.matches(".like__button__div")) {
-    //   toggleLike(target);
-    
-    //   // displayPost(mainUser)
-    // }
     if (
       target.matches(".comment__button__div") ||
       target.matches(".comment__button") ||
