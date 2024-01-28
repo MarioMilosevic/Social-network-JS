@@ -50,6 +50,7 @@ setTimeout(() => {
       const input = target.closest(".comment__input");
       const li = target.closest(".post__list__item");
       const commentSectionHidden = li.lastElementChild
+      const commentNumber = li.querySelector('.comment__number')
       console.log(commentSectionHidden);
       const selectedPost = mainUser.findPost(li.id);
       const newUserPost = new Post(selectedPost);
@@ -62,8 +63,7 @@ setTimeout(() => {
             img: mainUser.getImg(),
           };
           newUserPost.addComment(userComment);
-          console.log("enter");
-          console.log(newUserPost.getCommentsArr());
+          commentNumber.textContent = commentNumber.textContent.length >= 2 ? `${newUserPost.getCommentsLength()} Comments` : `${newUserPost.getCommentsLength()} Comment`
           input.value = "";
           commentSectionHidden.innerHTML = ''
           displayComments(commentSectionHidden,newUserPost)
