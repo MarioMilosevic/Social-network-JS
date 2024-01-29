@@ -2,19 +2,8 @@
 
 export class User {
   user;
-  // name;
-  // lastName;
-  // friends;
-  // img;
-  // postDate;
   constructor(user) {
     this.user = user;
-    // this.name = user.name;
-    // this.lastName = user.lastName;
-    // this.adress = user.adress.street;
-    // this.friends = user.friends;
-    // this.img = user.img;
-    // this.postDate = user.postDate;
   }
 
   getAdress() {

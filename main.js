@@ -7,6 +7,7 @@ import { displayPost } from "./HelperFunctions/displayPost.js";
 import { showComments } from "./HelperFunctions/showComments.js";
 import { GlobalState } from "./class/GlobalState.js";
 import { addComment } from "./HelperFunctions/addComment.js";
+import { findFriend } from "./HelperFunctions/findFriend.js";
 // Query selectors
 
 const app = document.querySelector("#app");
@@ -23,6 +24,8 @@ export const totalFriendsNumber = friendsInfo.querySelector("p");
 export const posts = document.querySelector(".posts");
 const navBtn = document.querySelector(".nav__btn");
 const logOut = document.querySelector(".log__out__container");
+const searchBar = document.querySelector("#social__network__search__bar");
+const searchResults = document.querySelector(".search__results");
 // Class instances
 const globalState = new GlobalState();
 export const mainUser = new User(user);
@@ -55,5 +58,21 @@ navBtn.addEventListener("click", function () {
     logOut.classList.add("visible");
   } else {
     logOut.classList.remove("visible");
+  }
+});
+
+searchBar.addEventListener("input", function () {
+  const friends = mainUser.getFriendsArr();
+  const search = searchBar.value.toLowerCase();
+  const friend = friends.filter(({ name, lastName }) => {
+    const fullName = `${name} ${lastName}`.toLowerCase();
+    return fullName.toLowerCase().includes(search);
+  });
+  if (friend) {
+    findFriend(searchResults, friend);
+    searchResults.classList.remove("hidden");
+  }
+  if (searchBar.value.length === 0) {
+    searchResults.classList.add("hidden");
   }
 });
