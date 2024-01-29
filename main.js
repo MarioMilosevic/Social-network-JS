@@ -51,11 +51,9 @@ setTimeout(() => {
 
 // NA KLIK GORE DESNO PROFIL DA SE POJAVI LOG OUT I OSTALO
 navBtn.addEventListener("click", function () {
-  if (logOut.classList.contains('not__visible')){
-    logOut.classList.remove('not__visible');
-    logOut.classList.add('visible');
+  if (!logOut.classList.contains("visible")) {
+    logOut.classList.add("visible");
   } else {
-    logOut.classList.add('not__visible')
-    logOut.classList.remove('visible')
+    logOut.classList.remove("visible");
   }
 });

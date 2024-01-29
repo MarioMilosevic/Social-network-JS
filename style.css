@@ -118,6 +118,8 @@ body {
   border: 2px solid var(--primary--color--);
   transition: all 0.3s;
   transform: scale(0.8);
+  visibility: hidden;
+  opacity: 0;
 }
 
 .my__profile,
@@ -145,10 +147,7 @@ body {
   background-color: var(--primary--color--);
 }
 
-.not__visible{
-  visibility: hidden;
-  opacity: 0;
-}
+
 
 .visible{
   visibility: visible;
