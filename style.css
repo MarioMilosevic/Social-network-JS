@@ -392,7 +392,6 @@ main {
 
 .liked__by {
   font-size: 1.6rem;
-  width: 50rem;
 }
 
 .likes__comments__number svg {
@@ -410,10 +409,10 @@ main {
 
 .comment__container {
   display: flex;
-  width: 10rem;
   justify-content: space-between;
   align-items: center;
   font-size: 1.6rem;
+  width: 90%;
   cursor: pointer;
   border-bottom: 1px solid transparent;
 }

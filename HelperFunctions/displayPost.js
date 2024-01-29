@@ -25,14 +25,14 @@ export const displayPost = (user) => {
       case 1:
         (firstPersonName = userPost.getWhoLiked().first.name),
           (firstPersonLastName = userPost.getWhoLiked().first.lastName);
-        likedTextContent = `${firstPersonName} ${firstPersonLastName} likes this`;
+        likedTextContent = `${firstPersonName} ${firstPersonLastName}`;
         break;
       case 2:
         (firstPersonName = userPost.getWhoLiked().first.name),
           (firstPersonLastName = userPost.getWhoLiked().first.lastName),
           (secondPersonName = user.getWhoLiked().second.name),
           (secondPersonLastName = userPost.getWhoLiked().second.lastName);
-        likedTextContent = `${firstPersonName} ${firstPersonLastName} and ${secondPersonName} ${secondPersonLastName} like this`;
+        likedTextContent = `${firstPersonName} ${firstPersonLastName} and ${secondPersonName} ${secondPersonLastName}`;
         break;
       default:
         (firstPersonName = userPost.getWhoLiked().first.name),
@@ -40,7 +40,7 @@ export const displayPost = (user) => {
           (secondPersonName = user.getWhoLiked().second.name),
           (secondPersonLastName = userPost.getWhoLiked().second.lastName),
           (othersLength = userPost.getWhoLiked().others.length);
-        likedTextContent = `${firstPersonName} ${firstPersonLastName} ${secondPersonName} ${secondPersonLastName} and ${othersLength} others like this`;
+        likedTextContent = `${firstPersonName} ${firstPersonLastName} ${secondPersonName} ${secondPersonLastName} and ${othersLength} others`;
     }
     const li = document.createElement("li");
     li.id = userPost.getID();
@@ -61,8 +61,8 @@ export const displayPost = (user) => {
 </svg>
 <span class="like__button__container__span">${userPost.getLikesLength()}</span>
 </div>
-<p class="liked__by">${likedTextContent}</p>
 <div class="comment__container">
+<p class="liked__by">${likedTextContent}</p>
 <span class="comment__number">${commentsLength}</span>
 </div>
 </div>
