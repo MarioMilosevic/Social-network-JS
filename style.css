@@ -105,30 +105,30 @@ body {
 }
 
 .log__out__container {
-  /* border: 1px solid black; */
-  width: 20rem;
-  position: absolute;
-  top: 8rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--white--color);
-  border-radius: 1.6rem;
-  border: 2px solid var(--primary--color--);
-  transition: all 0.3s;
-  transform: scale(0.8);
   visibility: hidden;
   opacity: 0;
+  position: absolute;
+  top: 110%;
+  right: 0.3%;
+  max-height: 0;
+  width: max-content;
+  transition: all 0.1s ease-in-out;
+  background-color: var(--white--color);
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  gap: 0.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.1);
 }
 
 .my__profile,
 .log__out {
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
   align-items: center;
   font-size: 2rem;
-  padding:1rem;
+  padding: 1rem;
   width: 100%;
   border-radius: 1.6rem;
   cursor: pointer;
@@ -136,23 +136,24 @@ body {
 
 .my__profile svg,
 .log__out svg {
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
   background-color: var(--primary--color--);
   border-radius: 1.6rem;
   padding: 0.5rem;
 }
 
-.my__profile:hover, .log__out:hover {
+.my__profile:hover,
+.log__out:hover {
   background-color: var(--primary--color--);
 }
 
-
-
-.visible{
+.visible {
+  padding: 1rem 1rem 0 0;
+  max-height: 300px;
+  opacity: 1;
   visibility: visible;
   opacity: 1;
-  transform: none;
 }
 
 /*  -------------------- MAIN --------------------*/
@@ -218,9 +219,8 @@ main {
 }
 
 .user__edit {
-  min-width: 15%;
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
   background-color: var(--primary--color--);
   font-size: 1.6rem;
   font-weight: bold;
@@ -286,13 +286,6 @@ main {
   margin-top: 0.5rem;
 }
 
-.posts {
-  width: 50%;
-  border-radius: 1rem;
-  height: 50rem;
-  background-color: var(--white--color);
-}
-
 .friends__info {
   width: 30%;
   /* border: 1px solid black; */
@@ -334,15 +327,17 @@ main {
 /* --------------------- POSTS ---------------------*/
 
 .posts {
-  padding: 1rem;
   background-color: var(--primary--color--);
   list-style: none;
+  width: 48%;
+  border-radius: 1.6rem;
+  height: 50rem;
 }
 
 .posts li {
   background-color: var(--white--color);
   border-radius: 1.6rem;
-  padding: 0.5rem;
+  padding: 1.5rem 1rem;
   margin-bottom: 2rem;
 }
 
@@ -406,7 +401,7 @@ main {
 }
 
 .like__button__container {
-  width: 5rem;
+  width: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -486,13 +481,12 @@ main {
 }
 
 .comment__section__addComment {
-  /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
   height: 40%;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .comment__section__addComment input {
@@ -509,17 +503,15 @@ main {
 }
 
 .comment__info {
-  /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
-  margin-top: 1rem;
+  padding: 1rem;
   align-items: center;
-  /* height: 10rem; */
 }
 
 .comment__info img {
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .comment {
@@ -548,6 +540,3 @@ main {
 .hidden {
   display: none;
 }
-
-
-
