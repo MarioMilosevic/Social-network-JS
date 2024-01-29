@@ -2,16 +2,16 @@
 
 export const user = {
   id: crypto.randomUUID(),
-  name: "Nemanja",
-  lastName: "Malesija",
+  name: "Mario",
+  lastName: "Milosevic",
   img: "img/profile5.png",
   adress: {
     country: "Montenegro",
-    city: "Podgorica",
-    street: "Vukosava Bozovica b.b.",
+    city: "Kotor",
+    street: "Novo Naselje b.b.",
     socialMedia: {
-      facebook: "Nemanja Malesija",
-      instagram: "nemanjamalesija",
+      facebook: "Mario Milosevic",
+      instagram: "mariomilosevic",
     },
   },
 
@@ -24,8 +24,8 @@ export const user = {
     },
     {
       id: crypto.randomUUID(),
-      name: "Petar",
-      lastName: "Pan",
+      name: "Hiroshi",
+      lastName: "Tanaka",
       img: "/img/friendImages/friend2.jpeg",
     },
     {
@@ -42,14 +42,14 @@ export const user = {
     },
     {
       id: crypto.randomUUID(),
-      name: "Hoklberi",
-      lastName: "Haund",
+      name: "Ethan",
+      lastName: "Turner",
       img: "/img/friendImages/friend5.avif",
     },
     {
       id: crypto.randomUUID(),
-      name: "Sadam",
-      lastName: "Husein",
+      name: "Marc",
+      lastName: "Anderson",
       img: "/img/friendImages/friend6.png",
     },
   ],
@@ -57,7 +57,7 @@ export const user = {
   posts: [
     {
       id: crypto.randomUUID(),
-      postText: "Danas se osjecam kao Knez mihajlova",
+      postText: "A true hero isn't measured by the size of his strength but by the strength of his heart",
       postDate: "2 days ago",
       likes: [
         {
@@ -65,76 +65,76 @@ export const user = {
           lastName: "Stouns",
         },
         {
-          name: "Petar",
-          lastName: "Pan",
+          name: "Hiroshi",
+          lastName: "Tanaka",
         },
       ],
       comments: [
         {
           name: "Gordana",
           lastName: "Stouns",
-          commentText: "Hahaha, ti preludi djecace",
+          commentText: "Wow, this is so profound and inspiring! Couldn't agree more.",
           img: "/img/friendImages/friend1.jpeg",
         },
         {
-          name: "Sadam",
-          lastName: "Husein",
-          commentText: "Mi smo dvije strane istog novcica",
+          name: "Marc",
+          lastName: "Anderson",
+          commentText: "Absolutely love this quote!",
           img: "/img/friendImages/friend6.png",
         },
         {
-          name: "Petar",
-          lastName: "Pan",
-          commentText: "Nekad kasljem, nekad vodu nosim",
+          name: "Hiroshi",
+          lastName: "Tanaka",
+          commentText: "Sometimes, it's the small gestures that make someone a hero",
           img: "/img/friendImages/friend2.jpeg",
         },
       ],
     },
     {
       id: crypto.randomUUID(),
-      postText: "Iskasljao sam danas jedan zeleni klobuk",
+      postText: "It's not who I am underneath, but what I do that defines me.",
       postDate: "7 days ago",
       likes: [
         {
-          name: "Hoklberi",
-          lastName: "Haund",
+          name: "Ethan",
+          lastName: "Turner",
         },
       ],
       comments: [],
     },
     {
       id: crypto.randomUUID(),
-      postText: "Ako umremo, umrecemo zajedno",
+      postText: "If I'm to choose between one evil and another, I'd rather not choose at all.",
       postDate: "1 day ago",
       likes: [
         { name: "Kilibarda", lastName: "Petrovska" },
-        { name: "Petar", lastName: "Pan" },
-        { name: "Sadam", lastName: "Husein" },
+        { name: "Hiroshi", lastName: "Tanaka" },
+        { name: "Marc", lastName: "Anderson" },
         { name: "Maja", lastName: "Odzaklijevska" },
       ],
       comments: [
         {
           name: "Gordana",
           lastName: "Stouns",
-          commentText: "Zna se ko kosi, a ko vodu nosi",
+          commentText: "Sometimes the choices we face are so tough, it's almost like navigating through shades of gray.",
           img: "/img/friendImages/friend1.jpeg",
         },
         {
-          name: "Sadam",
-          lastName: "Husein",
-          commentText: "Zaspati necu, ali umreti necu nikada",
+          name: "Marc",
+          lastName: "Anderson",
+          commentText: " Choosing between evils can be a dilemma, but your stance adds a layer of wisdom to it. ",
           img: "/img/friendImages/friend6.png",
         },
         {
-          name: "Hoklberi",
-          lastName: "Haund",
-          commentText: "Snekakos proljeca, ja se sjetim starih drugova",
+          name: "Ethan",
+          lastName: "Turner",
+          commentText: " It's a reminder that sometimes the best option is to stay true to your principles, even if the choices seem challenging.",
           img: "/img/friendImages/friend5.avif",
         },
         {
           name: "Majda",
           lastName: "Odzaklijevska",
-          commentText: "Plastimo sijeno na Hilandar",
+          commentText: "Makes me ponder on the importance of staying true to one's moral compass. ",
           img: "/img/friendImages/friend4.jpg",
         },
       ],
