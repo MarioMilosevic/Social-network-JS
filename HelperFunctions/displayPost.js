@@ -2,7 +2,7 @@
 
 import { posts } from "../main";
 import { Post } from "../class/Post";
-import { toggleClass } from "./toggleClass";
+import { toggleClass } from "./ToggleClass";
 import { displayComments } from "./displayComments";
 export const displayPost = (user) => {
   const userPosts = user.getPosts();
