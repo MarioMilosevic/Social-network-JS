@@ -2,15 +2,12 @@
 
 import { posts } from "../main";
 import { Post } from "../class/Post";
-import { displayComments } from "./displayComments";
 import { toggleClass } from "./toggleClass";
+import { displayComments } from "./displayComments";
 export const displayPost = (user) => {
   const userPosts = user.getPosts();
-  // posts.innerHTML = "";
-  // for each
   userPosts.forEach((post) => {
     const userPost = new Post(post);
-    // console.log(userPost);
     let firstPersonName;
     let firstPersonLastName;
     let secondPersonName;
@@ -118,6 +115,5 @@ export const displayPost = (user) => {
 
     displayComments(hiddenCommentSection, userPost);
     posts.append(li);
-    // kraj for ica
   });
 };
