@@ -307,8 +307,8 @@ main {
 }
 
 .friends {
-  width: 60rem;
-  height: 55rem;
+  width: 55rem;
+  height: 50rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -353,8 +353,8 @@ main {
 }
 
 .friend__list li img {
-  width: 18rem;
-  height: 18rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 2rem;
   object-fit: cover;
 }
